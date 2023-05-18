@@ -1,0 +1,52 @@
+<!-- login -->
+<section class="vh-100" style="background-image:url(https://www.nikaiacours.fr/wp-content/uploads/2019/12/login-background.jpg)" >
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+
+              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+              <p class="text-white-50 mb-5">Please enter your Email and Password!</p>
+
+              <div class="form-outline form-white mb-4">
+                <form #loginForm="ngForm" (ngSubmit)="loginDetails(loginForm.value)" >
+                  Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" placeholder="enter email" #email="ngModel" name="email" ngModel required> <br><br>
+                  <div *ngIf="password.errors?.['required'] && password.touched ">Please enter password</div><br>
+                  <div *ngIf="password.errors?.['minlength'] && password.touched">please enter atleast 4 characters and maximum  length of password is 8</div>
+                  Password  <input type="password" name="password" #password="ngModel" placeholder="enter password" ngModel required="password" minlength="4" maxlength="8" required> <br><br>
+                  <input class="bg-success"type="submit" value="Login" [disabled]="!loginForm.valid">
+                </form>
+              </div>
+            </div>
+            <div>
+              <button class="btn-danger" (click)="addUser()" class="btn btn-dark btn-md">Sign Up</button><br><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Sign Up -->
+<div>
+<form *ngIf="showForm" (submit)="addNewUser()" style="width: 50vw; margin: auto; margin-bottom: 10px; font-size: 14px;"> 
+  <h2 style="text-align: center;">Add New User Data</h2>
+  <label>id:</label>
+  <input [(ngModel)]="newuser.id" name="uid" type="text" class="form-control" ><br>
+  <label>Email ID:</label>
+  <input [(ngModel)]="newuser.email" name="email" type="email" class="form-control" required><br>
+  <label>Name:</label>
+  <input [(ngModel)]="newuser.name" name="name" type="text" class="form-control" required><br>
+  <label>Password:</label>
+  <input [(ngModel)]="newuser.password" name="password" type="password" class="form-control" minlength="4" maxlength="8" placeholder="please enter atleast 4 characters and maximum  length of password is 8" required><br>
+
+  
+  <button type="submit" class="btn btn-primary btn-md" style="padding: 8px;">Sign Up</button>
+<button type="button" class="btn btn-danger" (click)="showForm = false" style="padding: 8px; margin-left: 5px;">Cancel</button>
+</form>
+</div>    
+
+
+</section>

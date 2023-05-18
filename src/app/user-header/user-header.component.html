@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <img src="http://www.newdesignfile.com/postpic/2014/06/icon-air-airline-photos_63759.png" width="50px" height="50px">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          
+          <span class="glyphicon glyphicon-home"></span>
+          <a class="nav-link active" routerLink="/uheader">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/uinventory">Products</a>
+        </li>
+       
+       
+        &emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;
+        
+        <li class="nav-item">
+          
+        <button  class="btn btn-danger" (click)="logout()" [disabled]="!isLoggedIn">Logout</button><br><br>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main>
+  <div class="intro">
+    <h1>Ainventory</h1>
+    <p>Online Aircraft Inventory Services</p>
+  </div>
+  <div class="achievements">
+    <div class="work">
+      <i class="fas fa-atom"></i>
+      <p class="work-heading" routerLink="/inventory">Products</p>
+      
+
+
+      <p class="work-text"></p>
+    </div>
+    <div class="work">
+      <i class="fas fa-skiing"></i>
+      <p class="work-heading" routerLink="/category">Category</p>
+      <p class="work-text" style="color: crimson;" >Airbus &nbsp; Boeing &nbsp; HAL &nbsp; Paras Defence</p>
+      
+     
+    </div>
+    <div class="work">
+      <i class="fas fa-ethernet"></i>
+      <p class="work-heading">Companies parterned with us</p>
+      <p class="work-text" style="color: crimson;" >Tail &nbsp; WingTip &nbsp; Fuel Tank &nbsp; BlackBox</p>
+    </div>
+  </div>
+  <div class="about-me">
+    <div class="about-me-text">
+      <h2>About Us</h2>
+      <p>Ainventory Supply is managed by aircraft maintenance professionals with years of hands on experience in aircraft inventory management. We have been there and understand how important it is to get you the right parts at the right price and in a timely manner.</p>
+    </div>
+    <img src="http://www.newdesignfile.com/postpic/2014/06/icon-air-airline-photos_63759.png" alt="me">
+  </div>
+</main>

@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <img src="http://www.newdesignfile.com/postpic/2014/06/icon-air-airline-photos_63759.png" width="50px" height="50px">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          
+          <span class="glyphicon glyphicon-home"></span>
+          <a class="nav-link active" routerLink="/uheader">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/uinventory">Products</a>
+        </li>
+       
+       
+        &emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;
+        
+        
+        <li class="nav-item">
+          
+        <button  class="btn btn-danger" (click)="logout()" [disabled]="!isLoggedIn">Logout</button><br><br>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<form  *ngIf="showform" style="width: 50vw; margin: auto; margin-bottom: 10px; font-size: 14px;">
+  <div>
+
+  <h2 style="text-align: center;">Add Address</h2>
+  <label>Name:</label>
+  <input name="id" type="text" class="form-control" hidden><br>
+  <label>Email:</label>
+  <input  name="category_id" type="text" class="form-control"><br>
+  <label>Address(House No.):</label>
+  <input  name="description" type="text" class="form-control"><br>
+  <label>Address(Street):</label>
+  <input  name="name" type="text" class="form-control"><br>
+  <label>Phone No.</label>
+  <input  name="price" type="number" class="form-control"><br>
+  <label>Add Phone No.</label>
+  <input  name="features" type="text" class="form-control"><br>
+  <button type="submit" (click)="paying()"class="btn btn-success btn-md" (click)="showform=false" style="padding: 8px;">Make Payment</button>
+  </div>
+
+</form>
+<div class="row row-cols-1 row-cols-3 g-4">
+
+  <div class="col"*ngFor="let e of product">
+    <div class="card">
+      
+      <div class="card-body">
+        <img src="{{e.description}}" width="3 00px" height="200px" alt="...">
+        <h3 class="card-text">{{e.name | uppercase}}</h3>
+            <h5><a class="card-title" href="{{e.features}}">Features</a></h5>
+                <h4 class="card-text">Price:{{e.price| currency:"INR"}}</h4>
+                <button type="submit" class="btn btn-success" (click)="Addaddress()" style="padding: 5px; margin: 2px; width: 5vw; ">Buy Now</button>
+      </div>
+    </div>
+  </div>
+  </div>
